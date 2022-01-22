@@ -191,3 +191,201 @@ Selection sort is a neat algorithm, but it’s not very fast. Quicksort is a fas
 
 ## 3 recursion
 
+Recursion is a coding technique used in many algorithms. 
+You learn how to break a problem down into a base case and a recursive case. The divide-and- conquer strategy (chapter 4) uses this simple concept to solve hard problems.
+
+
+Pseudocode is a high-level description of the problem you’re trying to solve, in code. It’s written like code, but it’s meant to be closer to human speech.
+
+### Recursion
+
+
+The second way uses recursion. Recursion is where a function calls itself.
+
+Recursion is used when it makes the solution clearer.
+
+There’s no performance benefit to using recursion; in fact, loops are sometimes better for performance. I like this quote by Leigh Caldwell on Stack Overflow: “Loops may achieve a performance gain for your program. Recursion may achieve a performance gain for your programmer. Choose which is more important in your situation!”
+
+### Base case and recursive case
+
+Because a recursive function calls itself, it’s easy to write a
+function incorrectly that ends up in an infinite loop.
+
+When you write a recursive function, you have to tell it when to stop recursing. That’s why every recursive function has two parts: the base case, and the recursive case. The recursive case is when the function calls itself. The base case is when the function doesn’t call itself again ... so it doesn’t go into an infinite loop.
+
+### The stack
+
+This section covers the call stack. It’s an important concept in programming. The call stack is an important concept in general programming, and it’s also important to understand when using recursion.
+
+Te stack of sticky notes is much simpler. When you insert an item, it gets added to the top of the list. When you read an item,
+you only read the topmost item, and it’s taken off the list. So your todo list has only two actions: push (insert) and pop (remove and read).
+
+![image](https://user-images.githubusercontent.com/25869911/150658199-20e771de-28c0-43f0-a055-8fc64a3be87f.png)
+
+
+This data structure is called a stack. The stack is a simple data structure.
+
+### The call stack
+
+Your computer uses a stack internally called the call stack. 
+
+def greet(name):
+print “hello, “ + name + “!” greet2(name)
+print “getting ready to say bye...” bye()
+
+def greet2(name):
+print “how are you, “ + name + “?”
+
+def bye():
+print “ok bye!”
+
+stack : 
+
+call greet(name) -> greet 
+
+call greet2(name) -> greet2
+                     greet
+                     
+print greet2 and return to greet (pop up the greet 2) -> greet
+
+call bye() -> bye
+              greet
+print bye() and return to gree(pop up bye) -> greet
+
+### The call stack with recursion
+
+the call stack too! Let’s look at this in action with the factorial function. factorial(5) is written as 5!, and it’s defined like this: 5! = 5 * 4 * 3 * 2 * 1
+
+def fact(x): if x == 1: return 1
+else:
+return x * fact(x-1)
+
+fact(3)
+
+![image](https://user-images.githubusercontent.com/25869911/150658468-00c51cf8-6dfd-4b4f-a387-606abab81020.png)
+
+![image](https://user-images.githubusercontent.com/25869911/150658471-9d900cd4-72fb-479c-ae60-761d9408aec3.png)
+
+The stack plays a big part in recursion.
+
+Using the stack is convenient because you don’t have to keep track of a pile of boxes yourself—the stack does it for you.
+
+Using the stack is convenient, but there’s a cost: saving all that info can take up a lot of memory. Each of those function calls takes up some memory, and when your stack is too tall, that means your computer is saving information for many function calls. At that point, you have two options:
+• You can rewrite your code to use a loop instead.
+• You can use something called tail recursion. That’s an advanced recursion topic that is out of the scope of this book. It’s also only supported by some languages, not all.
+
+* Recursion is when a function calls itself.
+* Every recursive function has two cases: the base case and the recursive case.
+* A stack has two operations: push and pop.
+* All function calls go onto the call stack.
+* The call stack can get very large, which takes up a lot of memory.
+
+## 4 - quicksort
+
+You learn about divide-and-conquer. Sometimes you’ll come across a problem that can’t be solved by any algorithm you’ve learned. When a good algorithmist comes across such a problem, they don’t just give up. They have a toolbox full of techniques they use on the problem, trying to come up with a solution. Divide-and-conquer is the first general technique you learn
+
+You learn about quicksort, an elegant sorting algorithm that’s often used in practice. Quicksort uses divide-and-conquer.
+
+We’ll explore divide and conquer (D&C), a well-known recursive technique for solving problems.
+
+When you get a new problem, you don’t have to be stumped. Instead, you can ask, “Can I solve this if I use divide and conquer?”
+
+### Divide & conquer
+
+1. Figure out the base case. This should be the simplest possible case.
+2. Divide or decrease your problem until it becomes the base case.
+
+Euclid’s algorithm
+
+To recap, here’s how D&C works:
+1. Figure out a simple case as the base case.
+2. Figure out how to reduce your problem and get to the base case.
+
+When you’re writing a recursive function involving an array, the base case is often an empty array or an array with one element. If you’re stuck, try that first.
+
+Sneak peak at functional programming
+
+Why would I do this recursively if I can do it easily with a loop?” you may be thinking. Well, this is a sneak peek into functional programming! Functional programming languages like Haskell don’t have loops, so you have to use recursion to write functions like this. If you have a good understanding of recursion, functional languages will be easier to learn
+
+Haskell makes heavy use of recursion, it includes all kinds of niceties like this to make recursion easy. If you like recursion, or you’re interested in learning a new language, check out Haskell.
+
+sum [] = 0 Base case
+sum (x:xs) = x + (sum xs) Recursive case
+
+### Quicksort
+
+Quicksort is a sorting algorithm. It’s much faster than selection sort and is frequently used in real life.
+
+For example, the C standard library has a function called qsort, which is its implementation of quicksort. Quicksort also uses D&C.
+
+no need to sort when the array is empty or there is one element only.
+
+Empty arrays and arrays with just one element will be the base case. You can just return those arrays as is—there’s nothing to sort:
+
+def quicksort(array): if len(array) < 2:
+  return array
+
+Let’s look at bigger arrays. An array with two elements is pretty easy to sort, too.
+R = check if first element is smaller than the second. if it is not, swap them
+
+3 elements 
+
+Remember, you’re using D&C. So you want to break down this array until you’re at the base case. Here’s how quicksort works. First, pick an element from the array. This element is called the pivot
+
+We’ll talk about how to pick a good pivot later. For now, let’s say the first item in the array is the pivot.
+
+array:
+33 -> 15 -> 10
+
+![image](https://user-images.githubusercontent.com/25869911/150658927-f19a8a27-bfb3-435d-b205-2741ffc19f82.png)
+
+![image](https://user-images.githubusercontent.com/25869911/150658932-62320ebb-12ca-4ab8-8ce4-456179491966.png)
+
+
+Inductive proofs
+
+You just got a sneak peak into inductive proofs! Inductive proofs are one way to prove that your algorithm works. Each inductive proof has two steps: the base case and the inductive case. Sound familiar? For example, suppose I want to prove that I can climb to the top of a ladder. In the inductive case, if my legs are on a rung, I can put my legs on the next rung. So if I’m on rung 2, I can climb to rung 3. That’s the inductive case. For the base case, I’ll say that my legs are on rung 1. Therefore, I can climb the entire ladder, going up one rung at a time.
+
+You use similar reasoning for quicksort. In the base case, I showed that the algorithm works for the base case: arrays of size 0 and 1. In the inductive case, I showed that if quicksort works for an array of size 1, it will work for an array of size 2. And if it works for arrays of size 2, it will work for arrays of size 3, and so on. Then I can say that quicksort will work for all arrays of any size. 
+
+
+### Big O notation revisited
+
+Quicksort is unique because its speed depends on the pivot you choose.
+
+![image](https://user-images.githubusercontent.com/25869911/150659018-e86b8b64-f2c0-44c3-bed0-6e938a0516ab.png)
+
+There’s another sorting algorithm called merge sort, which is
+O(n log n). Much faster! Quicksort is a tricky case. In the worst case, quicksort takes O(n2) time.
+
+It’s as slow as selection sort! But that’s the worst case. In the average case, quicksort takes O(n log n) time. So you might be wondering:
+* What do worst case and average case mean here?
+* If quicksort is O(n log n) on average, but merge sort is O(n log n) always, why not use merge sort? Isn’t it faster?
+
+### Merge sort vs. quicksort
+
+
+![image](https://user-images.githubusercontent.com/25869911/150659080-507c3bb1-b332-47f7-970d-0d64173ccf36.png)
+
+### Average Case vs Worst case
+
+The performance of quicksort heavily depends on the pivot you choose. Suppose you always choose the first element as the pivot. And you
+call quicksort with an array that is already sorted. Quicksort doesn’t check to see whether the input array is already sorted. So it will still try to sort it.
+
+![image](https://user-images.githubusercontent.com/25869911/150659167-cf31fbd1-7a9f-4ba4-9e73-9624a760f375.png)
+
+
+![image](https://user-images.githubusercontent.com/25869911/150659171-36a76630-f1c2-4b41-97c6-f5a506f3dddf.png)
+
+
+* D&C works by breaking a problem down into smaller and smaller pieces. If you’re using D&C on a list, the base case is probably an empty array or an array with one element.
+* If you’re implementing quicksort, choose a random element as the pivot. The average runtime of quicksort is O(n log n)!
+* The constant in Big O notation can matter sometimes. That’s why quicksort is faster than merge sort.
+* The constant almost never matters for simple search versus binary search, because O(log n) is so much faster than O(n) when your list gets big.
+
+
+## 5 - hash tables
+
+
+
+
