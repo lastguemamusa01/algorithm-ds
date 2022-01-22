@@ -38,7 +38,6 @@ Binary search runs in logarithmic time (or log time, as the natives call it).
 
 Big O notation is special notation that tells you how fast an algorithm is.
 
-
 ###  Algorithm running times grow at different rates
 
 Let’s assume it takes 1 millisecond to check one element. With simple search, Bob has to check 100 elements, so the search takes 100 ms to run. On the other hand, he only has to check 7 elements with binary search (log2 100 is roughly 7), so that search takes 7 ms to run. 
@@ -163,4 +162,32 @@ Which are used more: arrays or lists? Obviously, it depends on the use case. But
 at the first element. Linked lists can only do sequential access. If you want to read the 10th element of a linked list, you have to read the first 9 elements and follow the links to the 10th element. Random access means you can jump directly to the 10th element. You’ll frequently hear me say that arrays are faster at reads. This is because they provide random access. A lot of use cases require random access, so arrays are used a lot. Arrays and lists are used to implement other data structures, too
 
 
+### Selection sort
+
+Suppose you have a bunch of music on your computer. For each artist, you have a play count.
+
+You want to sort this list from most to least played, so that you can rank your favorite artists. How can you do it?
+
+One way is to go through the list and find the most-played artist. Add that artist to a new list. repeat and repeat until the list is sorted.
+
+![image](https://user-images.githubusercontent.com/25869911/150656573-03ccccf0-6c9c-4471-8b8e-9cfb8ef609fc.png)
+
+
+This takes O(n × n) time or O(n^2) time.
+
+Maybe you’re wondering: as you go through the operations, the number of elements you have to check keeps decreasing. Eventually, you’re down to having to check just one element. So how can the run time still be O(n^2)? That’s a good question, and the answer has to do with constants in Big O notation. I’ll get into this more in chapter 4, but here’s the gist.
+
+You’re right that you don’t have to check a list of n elements each time. You check n elements, then n – 1, n - 2 ... 2, 1. On average, you check a list that has 1/2 × n elements. The runtime is O(n × 1/2 × n). But constants like 1/2 are ignored in Big O notation
+
+Selection sort is a neat algorithm, but it’s not very fast. Quicksort is a faster sorting algorithm that only takes O(n log n) time
+
+* Your computer’s memory is like a giant set of drawers.
+* When you want to store multiple elements, use an array or a list.
+* With an array, all your elements are stored right next to each other.
+* With a list, elements are strewn all over, and one element stores the address of the next one.
+* Arrays allow fast reads.
+* Linked lists allow fast inserts and deletes.
+* All elements in the array should be the same type (all ints, all doubles, and so on).
+
+## 3 recursion
 
