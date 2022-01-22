@@ -82,3 +82,85 @@ In general, for n items, it will take n! (n factorial) operations to compute the
 * Algorithm times are written in Big O notation.
 
 
+## 2 Selection Sort
+
+Arrays and linked lists—two of the most basic data structures. They’re used absolutely everywhere. 
+
+You can run binary search only on a sorted list of elements. This chapter teaches you selection sort. Most languages have a sorting algorithm built in, so you’ll rarely need to write your own version from scratch. But selection sort is a stepping stone to quicksort
+
+
+This is basically how your computer’s memory works. Your computer looks like a giant set of drawers, and each drawer has an address
+
+fe0/ffeeb is the address of a slot in memory.
+
+Each time you want to store an item in memory, you ask the computer for some space, and it gives you an address where you can store your item. If you want to store multiple items, there are two basic ways to do so: arrays and lists.
+
+### Arrays and linked lists
+
+Sometimes you need to store a list of elements in memory. Suppose you’re writing an app to manage your todos. You’ll want to store the todos as a list in memory.
+Should you use an array, or a linked list? Let’s store the todos in an array first, because it’s easier to grasp. Using an array means all your tasks are stored contiguously (right next to each other) in memory.
+
+Now suppose you want to add a fourth task. But the next drawer is taken up by someone else’s stuff!
+
+It’s like going to a movie with your friends and finding a place to sit— but another friend joins you, and there’s no place for them. You have to move to a new spot where you all fit. In this case, you need to ask your computer for a different chunk of memory that can fit four tasks. Then you need to move all your tasks there.
+
+Similarly, adding new items to an array can be a big pain. If you’re out of space and need to move to a new spot in memory every time, adding a new item will be really slow.
+
+One easy fix is to “hold seats”: even if you have only 3 items in your task list, you can ask the computer for 10 slots, just in case. Then you can add 10 items to your task list without having to move. This is a good workaround, but you should be aware of a couple of downsides:
+• You may not need the extra slots that you asked for, and then that memory will be wasted. You aren’t using it, but no one else can use it either.
+• You may add more than 10 items to your task list and have to move anyway.
+
+So it’s a good workaround, but it’s not a perfect solution. Linked lists solve this problem of adding items
+
+### Linked lists
+
+With linked lists, your items can be anywhere in memory.
+
+Each item stores the address of the next item in the list. A bunch of random memory addresses are linked together.
+
+It’s like a treasure hunt. You go to the first address, and it says, “The next item can be found at address 123.” So you go to address 123, and it says, “The next item can be found at address 847,” and so on. Adding an item to a linked list is easy: you stick it anywhere in memory and store the address with the previous item.
+
+With linked lists, you never have to move your items. You also avoid another problem. Let’s say you go to a popular movie with five of your friends. The six of you are trying to find a place to sit, but the theater
+is packed. There aren’t six seats together. Well, sometimes this happens with arrays. Let’s say you’re trying to find 10,000 slots for an array. Your memory has 10,000 slots, but it doesn’t have 10,000 slots together. You can’t get space for your array! A linked list is like saying, “Let’s split up and watch the movie.” If there’s space in memory, you have space for your linked list.
+If linked lists are so much better at inserts, what are arrays good for?
+
+### Arrays
+
+Websites with top-10 lists use a scummy tactic to get more page views. Instead of showing you the list on one page, they put one item on each page and make you click Next to get to the next item in the list. For example, Top 10 Best TV Villains won’t show you the entire list on one page. Instead, you start at #10 (Newman), and you have to click Next on each page to reach #1 (Gustavo Fring). This technique gives the websites 10 whole pages on which to show you ads, but it’s boring to click Next 9 times to get to #1. It would be much better if the whole list was on one page and you could click each person’s name for more info.
+
+Linked lists have a similar problem. Suppose you want to read the last item in a linked list. You can’t just read it, because you don’t know what address it’s at. Instead, you have to go to item #1 to get the address for item #2. Then you have to go to item #2 to get the address for item #3. And so on, until you get to the last item.Linked lists are great if you’re going to read all the items one at a time: you can read one item, follow the address to the next item, and so on. But if you’re going to keep jumping around, linked lists are terrible.
+
+Arrays are different. You know the address for every item in your array. For example, suppose your array contains five items, and you know it starts at address 00. What is the address of item #5
+
+### Terminology
+
+The elements in an array are numbered. This numbering starts from 0, not 1. For example, in this array, 20 is at position 1.
+Almost every programming language you use will number array elements starting at 0. You’ll soon get used to it.
+The position of an element is called its index. So instead of saying, “20 is at position 1,” the correct terminology is, “20 is at index 1.”
+
+![image](https://user-images.githubusercontent.com/25869911/150656342-f96d75a2-3c71-459d-a0a6-723fccb8253a.png)
+
+
+### Inserting into the middle of a list
+
+What’s better if you want to insert elements in the middle: arrays or lists? With lists, it’s as easy as changing what the previous element points to.
+But for arrays, you have to shift all the rest of the elements down.
+And if there’s no space, you might have to copy everything to a new location! Lists are better if you want to insert elements into the middle.
+
+### Deletions
+
+What if you want to delete an element? Again, lists are better, because you just need to change what the previous element points to. With arrays, everything needs to be moved up when you delete an element.
+
+Unlike insertions, deletions will always work. Insertions can fail sometimes when there’s no space left in memory. But you can always delete an element.
+
+
+![image](https://user-images.githubusercontent.com/25869911/150656458-e4dbe802-e348-4a9d-95c1-7223bb0f11a4.png)
+
+
+insertions and deletions are O(1) time only if you can instantly access the element to be deleted. It’s a common practice to keep track of the first and last items in a linked list, so it would take only O(1) time to delete those.
+
+Which are used more: arrays or lists? Obviously, it depends on the use case. But arrays see a lot of use because they allow random access. There are two different types of access: random access and sequential access. Sequential access means reading the elements one by one, starting
+at the first element. Linked lists can only do sequential access. If you want to read the 10th element of a linked list, you have to read the first 9 elements and follow the links to the 10th element. Random access means you can jump directly to the 10th element. You’ll frequently hear me say that arrays are faster at reads. This is because they provide random access. A lot of use cases require random access, so arrays are used a lot. Arrays and lists are used to implement other data structures, too
+
+
+
