@@ -386,6 +386,95 @@ call quicksort with an array that is already sorted. Quicksort doesn’t check t
 
 ## 5 - hash tables
 
+When a customer buys product, you have to look up the price in a book. If the book is unalphabetized, it can take you a long time to look through every single line for apple. You’d be doing simple search from chapter 1, where you have to look at every line. Do you remember how long that would take? O(n) time. If the book is alphabetized, you could run binary search to find the price of an apple. That would only take O(log n) time.
+
+But as a cashier, looking things up in a book is a pain, even if the book is sorted. You can feel the customer steaming up as you search for items in the book. What you really need is a buddy who has all the names and prices memorized. Then you don’t need to look up anything: you ask her, and she tells you the answer instantly.
+
+Your buddy Maggie can give you the price in O(1) time for any item, no matter how big the book is. She’s even faster than binary search.
+
+### Hash Functions
+
+![image](https://user-images.githubusercontent.com/25869911/150659364-45371d02-e54f-43fd-9112-7febef7135ff.png)
+
+![image](https://user-images.githubusercontent.com/25869911/150659372-b7231c47-3411-4195-887b-fa71895607e7.png)
 
 
+The hash function tells you exactly where the price is stored, so you don’t have to search at all! This works because
+
+* The hash function consistently maps a name to the same index. Every time you put in “avocado”, you’ll get the same number back. So you can use it the first time to find where to store the price of an avocado, and then you can use it to find where you stored that price.
+* The hash function maps different strings to different indexes. “Avocado” maps to index 4. “Milk” maps to index 0. Everything maps to a different slot in the array where you can store its price.
+* The hash function knows how big your array is and only returns valid indexes. So if your array is 5 items, the hash function doesn’t return 100 ... that wouldn’t be a valid index in the array.
+
+Put a hash function and an array together, and you get a data structure called a hash table. A hash table is the first data structure you’ll learn that has some extra logic behind it. Arrays and lists map straight to memory, but hash tables are smarter. They use a hash function to intelligently figure out where to store elements.
+
+Hash tables are probably the most useful complex data structure you’ll learn. They’re also known as hash maps, maps, dictionaries, and associative arrays.
+
+A hash table has keys and values. In the book hash, the names of produce are the keys, and their prices are the values. A hash table maps keys to values.
+
+### Use cases
+
+Hash tables are used everywhere. This section will show you a few use cases.
+
+#### Using hash tables for lookups
+
+Your phone has a handy phonebook built in.
+
+Suppose you want to build a phone book like this. You’re mapping people’s names to phone numbers. Your phone book needs to have this functionality:
+
+* Add a person’s name and the phone number associated with that person.
+* Enter a person’s name, and get the phone number associated with that name.
+* 
+This is a perfect use case for hash tables! Hash tables are great when you want to
+* Create a mapping from one thing to another thing
+* Look something up
+
+
+Wow, mapping a web address to an IP address? Sounds like a perfect use case for hash tables! This process is called DNS resolution.
+
+google.com -> 74.125.239.133
+
+#### Preventing duplicate entries
+
+#### Using hash tables as a cache
+
+One final use case: caching. If you work on a website, you may have heard of caching before as a good thing to do.
+
+Suppose you have a niece who keeps asking you about planets. “How far is Mars from Earth?” “How far is the Moon?” “How far is Jupiter?” Each time, you have to do a Google search and give her an answer. It takes a couple of minutes. Now, suppose she always asked, “How far is the Moon?” Pretty soon, you’d memorize that the Moon is 238,900 miles away. You wouldn’t have to look it up on Google ... you’d just remember and answer. This is how caching works: websites remember the data instead of recalculating it.
+
+This is called caching. It has two advantages:
+
+* You get the web page a lot faster, just like when you memorized the distance from Earth to the Moon. The next time your niece asks you, you won’t have to Google it. You can answer instantly.
+* Facebook has to do less work.
+
+Caching is a common way to make things faster. All big websites use caching. And that data is cached in a hash!
+
+![image](https://user-images.githubusercontent.com/25869911/150659682-da858927-2a03-472f-b678-bd612866721b.png)
+
+
+hashes are good for
+* Modeling relationships from one thing to another thing
+* Filtering out duplicates
+* Caching/memorizing data instead of making your server do work
+
+
+### Collisions
+
+Like I said earlier, most languages have hash tables. You don’t need to know how to write your own. So, I won’t talk about the internals of hash tables too much. But you still care about performance! To understand the performance of hash tables, you first need to understand what collisions are.
+
+First, I’ve been telling you a white lie. I told you that a hash function always maps different keys to different slots in the array.
+
+
+In reality, it’s almost impossible to write a hash function that does this.
+
+And your hash function is really simple: it assigns a spot in the array alphabetically.
+
+![image](https://user-images.githubusercontent.com/25869911/150659785-d6f50703-c00a-4c7d-9417-2fbafe2100c2.png)
+
+
+### Performance
+
+![image](https://user-images.githubusercontent.com/25869911/150659855-fa967f79-7dec-49dc-ac19-e9cb4dfdad63.png)
+
+
+### Load factor
 
