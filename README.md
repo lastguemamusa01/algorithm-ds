@@ -575,7 +575,72 @@ A queue works exactly like it does in real life. Suppose you and your friend are
 
 ### Running time
 
+If you search your entire network for a mango seller, that means you’ll follow each edge (remember, an edge is the arrow or connection from one person to another). So the running time is at least O(number of edges).
+
+You also keep a queue of every person to search. Adding one person to the queue takes constant time: O(1). Doing this for every person will take O(number of people) total. Breadth-first search takes O(number of people + number of edges), and it’s more commonly written as O(V+E) (V for number of vertices, E for number of edges).
+
+You could say that this list is sorted, in a way. If task A depends on task B, task A shows up later in the list. This is called a topological sort, and it’s a way to make an ordered list out of a graph. Suppose you’re planning a wedding and have a large graph full of tasks to do—and you’re not sure where to start. You could topologically sort the graph and get a list of tasks to do, in order.
+
+![image](https://user-images.githubusercontent.com/25869911/151291369-88c9a523-8b28-4275-a322-f0266fa172f9.png)
+
+* Breadth-first search tells you if there’s a path from A to B.
+* If there’s a path, breadth-first search will find the shortest path.
+* If you have a problem like “find the shortest X,” try modeling your problem as a graph, and use breadth-first search to solve.
+* A directed graph has arrows, and the relationship follows the direction of the arrow (rama -> adit means “rama owes adit money”).
+* Undirected graphs don’t have arrows, and the relationship goes both ways (ross - rachel means “ross dated rachel and rachel dated ross”).
+* Queues are FIFO (First In, First Out).
+* Stacks are LIFO (Last In, First Out).
+* You need to check people in the order they were added to the search list, so the search list needs to be a queue. Otherwise, you won’t get the shortest path.
+* Once you check someone, make sure you don’t check them again. Otherwise, you might end up in an infinite loop.
 
 
+## 7 - Dijkstra's algorithm
 
+weighted graphs: a way to assign more or less weight to some edges.
+You learn Dijkstra’s algorithm, which lets you answer “What’s the shortest path to X?” for weighted graphs.
+You learn about cycles in graphs, where Dijkstra’s algorithm doesn’t work.
+
+### Working with Dijkstra’s algorithm
+
+![image](https://user-images.githubusercontent.com/25869911/151291921-6050e588-3887-466a-a7bc-29a74f0ce0ed.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151292785-279e3cfc-89e2-415e-bed4-df1ef770000b.png)
+
+### Terminology
+
+![image](https://user-images.githubusercontent.com/25869911/151293196-5779711e-2c03-487d-a417-bdc6e5be467e.png)
+
+### Trading for a piano
+
+![image](https://user-images.githubusercontent.com/25869911/151294334-5fafa56b-dbf5-40c3-a9cf-1021c75fa1b6.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151294349-deb7786c-a7e4-4d56-aa0d-d845ce2b962b.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151294370-0945595c-9b5a-4e15-9c99-bff1f8c12b2a.png)
+
+### Negative-weight edges
+
+![image](https://user-images.githubusercontent.com/25869911/151294912-166db580-4973-4104-92f2-99eed0b020f7.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151294920-d82585d0-7036-48a3-8d22-641b2770b0f0.png)
+
+### Implementation
+
+![image](https://user-images.githubusercontent.com/25869911/151296308-72c9fcfa-5024-4bfe-91f2-6d1e2b7b8aaf.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151296323-77295cd5-2051-4c31-93fb-10252fc80237.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151296346-2aef0886-5c5f-4699-ad42-dc83cc04c134.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151296363-7c3118d3-4f5a-41b6-b1eb-5d4a7a3613ba.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151296382-bfefda57-2a00-4762-9c96-cc026fc0ce47.png)
+
+
+* Breadth-first search is used to calculate the shortest path for an unweighted graph.
+* Dijkstra’s algorithm is used to calculate the shortest path for a weighted graph.
+* Dijkstra’s algorithm works when all the weights are positive.
+* If you have negative weights, use the Bellman-Ford algorithm.
+
+## 8 - Greedy algorithms
 
