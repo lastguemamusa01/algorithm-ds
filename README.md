@@ -478,3 +478,36 @@ And your hash function is really simple: it assigns a spot in the array alphabet
 
 ### Load factor
 
+This hash table has a load factor of 1. What if your hash table has only 50 slots? Then it has a load factor of 2. There’s no way each item will get its own slot, because there aren’t enough slots! Having a load factor greater than 1 means you have more items than slots in your array. Once the load factor starts to grow, you need to add more slots to your hash table. This is called resizing
+
+for the load factor = 3/4.  -> 4 slots and 3 occupied slots
+
+You need to resize this hash table. First you create a new array that’s bigger. The rule of thumb is to make an array that is twice the size.
+
+Now you need to re-insert all of those items into this new hash table
+using the hash function
+
+This new table has a load factor of 3/8. Much better! With a lower load factor, you’ll have fewer collisions, and your table will perform better. A good rule of thumb is, resize when your load factor is greater than 0.7.
+
+You might be thinking, “This resizing business takes a lot of time!” And you’re right. Resizing is expensive, and you don’t want to resize too often. But averaged out, hash tables take O(1) even with resizing.
+
+### A good hash function
+
+A good hash function distributes values in the array evenly. A bad hash function groups values together and produces a lot of collisions.
+
+good hash funciton is SHA function
+
+Hash tables are a powerful data structure because they’re so fast and they let you model data in a different way. You might soon find that you’re using them all the time:
+
+* You can make a hash table by combining a hash function
+with an array.
+* Collisions are bad. You need a hash function that minimizes collisions.
+* Hash tables have really fast search, insert, and delete.
+* Hash tables are good for modeling relationships from one item to another item.
+* Once your load factor is greater than .07, it’s time to resize your hash table.
+* Hash tables are used for caching data (for example, with a web server).
+* Hash tables are great for catching duplicates.
+
+## 6 - breadth-first search 
+
+
