@@ -510,4 +510,33 @@ with an array.
 
 ## 6 - breadth-first search 
 
+* model a network using a new, abstract data structure: graphs.
+* You learn breadth-first search, an algorithm you can run on graphs to answer questions like, “What’s the shortest path to go to X?”'
+* directed versus undirected graphs.
+* topological sort, a different kind of sorting algorithm that exposes dependencies between nodes.
+
+
+I’ll talk about what graphs are (they don’t involve an X or Y axis). Then I’ll show you your first graph algorithm. It’s called breadth-first search (BFS).
+
+Breadth-first search allows you to find the shortest distance between two things. But shortest distance can mean a lot of things! You can use breadth-first search to
+
+* Write a checkers AI that calculates the fewest moves to victory
+* Write a spell checker (fewest edits from your misspelling to a real word—for example, READED -> READER is one edit)
+* Find the doctor closest to you in your network
+
+Graph algorithms are some of the most useful algorithms I know. Make sure you read the next few chapters carefully—these are algorithms you’ll be able to apply again and again.
+
+
+### Introduction to graphs
+
+
+![image](https://user-images.githubusercontent.com/25869911/151288811-c896b7b9-e945-4a99-85ed-d536cdae9647.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151288825-199d6523-3f98-42a3-a4b0-d87171687a53.png)
+
+
+### What is a graph?
+
+![image](https://user-images.githubusercontent.com/25869911/151288844-5a1fc0f9-05a1-48e5-b65e-2d8c10bf7356.png)
+
 
