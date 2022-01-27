@@ -539,4 +539,43 @@ Graph algorithms are some of the most useful algorithms I know. Make sure you re
 
 ![image](https://user-images.githubusercontent.com/25869911/151288844-5a1fc0f9-05a1-48e5-b65e-2d8c10bf7356.png)
 
+### Breadth-first search
+
+Breadth- first search is a different kind of search algorithm: one that runs on graphs. It can help answer two types of questions:
+
+* Question type 1: Is there a path from node A to node B?
+* Question type 2: What is the shortest path from node A to node B?
+
+![image](https://user-images.githubusercontent.com/25869911/151289364-6b2fc9d5-296f-4941-9235-10434a92f3d6.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151289387-3de524ac-0329-4827-992c-8b6eec6ae02d.png)
+
+### Finding the shortest path
+
+You’d prefer a first-degree connection to a second-degree connection, and a second-degree connection to a third-degree connection, and so on. So you shouldn’t search any second-degree connections before you make sure you don’t have a first-degree connection who is a mango seller. Well, breadth-first search already does this! The way breadth-first search works, the search radiates out from the starting point. So you’ll check first-degree connections before second-degree connections.
+
+![image](https://user-images.githubusercontent.com/25869911/151289572-ed73644b-276a-40ff-82a4-b0dd825dd7e6.png)
+
+
+### Queues
+
+A queue works exactly like it does in real life. Suppose you and your friend are queueing up at the bus stop. If you’re before him in the queue, you get on the bus first. A queue works the same way. Queues are similar to stacks. You can’t access random elements in the queue. Instead, there are two only operations, enqueue and dequeue.
+
+![image](https://user-images.githubusercontent.com/25869911/151289746-f6ff8818-31ec-4e06-84ae-d487b36c8567.png)
+
+### Implementing the graph
+
+![image](https://user-images.githubusercontent.com/25869911/151290400-34b67788-5795-4791-b670-77da4e8ad1f4.png)
+
+### Implementing the algorithm
+
+![image](https://user-images.githubusercontent.com/25869911/151290413-485b8bff-b561-4711-9b1c-c76a6ff3d057.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151290682-e36d2eef-d61b-483a-9382-8a1943697081.png)
+
+### Running time
+
+
+
+
 
