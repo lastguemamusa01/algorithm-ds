@@ -644,3 +644,27 @@ You learn about cycles in graphs, where Dijkstra’s algorithm doesn’t work.
 
 ## 8 - Greedy algorithms
 
+You learn how to tackle the impossible: problems that have no fast algorithmic solution (NP-complete problems).
+
+You learn how to identify such problems when you see them, so you don’t waste time trying to find a fast algorithm for them.
+
+You learn about approximation algorithms, which you can use to find an approximate solution to an NP-complete problem quickly.
+
+You learn about the greedy strategy, a very simple problem-solving strategy.
+
+### The classroom scheduling problem
+
+![image](https://user-images.githubusercontent.com/25869911/151681387-f08b1f9d-f48a-4a85-a946-5502cdbb5883.png)
+
+A greedy algorithm is simple: at each step, pick the optimal move. In this case, each time you pick a class, you pick the class that ends the soonest. In technical terms: at each step you pick the locally optimal solution, and in the end you’re left with the globally optimal solution.
+
+### The knapsack problem
+
+![image](https://user-images.githubusercontent.com/25869911/151681456-82fe1b88-4820-4a68-9a4d-5057019534f0.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151681501-aefad88f-b486-4d68-b7ef-e51863bdf7ce.png)
+
+
+### The set-covering problem
+
+
