@@ -726,6 +726,28 @@ The traveling-salesperson problem and the set-covering problem both have somethi
 
 ## 9 - dynamic programming
 
+* You learn dynamic programming, a technique to solve a hard problem by breaking it up into subproblems and solving those subproblems first.
+
+### The knapsack problem
+
+You’re a thief with a knapsack that can carry 4 lb of goods.
+
+![image](https://user-images.githubusercontent.com/25869911/151720671-df826129-cdec-4aec-a48d-e2cd0bdfb43b.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151721783-afc69277-f85f-4715-991d-d0117037cf1b.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151721867-bbbaf897-45af-4b77-9751-5145249fccd5.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151721940-6e1dc2a0-f3e8-41b2-9541-de9ec3c5528d.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722018-2912d940-2937-4118-94e0-93dd2f446518.png)
+
+### Knapsack problem FAQ
+
+![image](https://user-images.githubusercontent.com/25869911/151722073-076971a8-9049-4ee3-8aa9-baa25198d69e.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722139-40594ace-8235-440e-a983-359f49fe3708.png)
+
 
 
 
