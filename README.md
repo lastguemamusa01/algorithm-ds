@@ -748,6 +748,58 @@ You’re a thief with a knapsack that can carry 4 lb of goods.
 
 ![image](https://user-images.githubusercontent.com/25869911/151722139-40594ace-8235-440e-a983-359f49fe3708.png)
 
+![image](https://user-images.githubusercontent.com/25869911/151722253-8d5c704e-dd63-48e3-90c3-d736da8b6fa4.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722413-a7bb3adf-2855-4ec9-8816-6bf3713b49db.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722567-f0daf9bf-e52c-4e80-a494-0f73a9c4946a.png)
+
+Is it possible that the best solution doesn’t fill the knapsack completely?
+
+* Yes. Suppose you could also steal a diamond. This is a big diamond: it weighs 3.5 pounds. It’s worth a million dollars, way more than anything else. You should definitely steal it! But there’s half a pound of space left, and nothing will fit in that space.
+
+### Longest common substring
+
+* Dynamic programming is useful when you’re trying to optimize something given a constraint. In the knapsack problem, you had to maximize the value of the goods you stole, constrained by the size of the knapsack.
+* You can use dynamic programming when the problem can be broken into discrete subproblems, and they don’t depend on each other.
+
+![image](https://user-images.githubusercontent.com/25869911/151722742-2b01fbcf-9014-446e-9b0e-334ec2e7b1e3.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722831-aae798be-3da9-4030-84b1-1dee3fe918aa.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151722996-e6115762-9a38-483f-aa28-736487b3954d.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151723059-e296d89f-4a51-4df2-8d8c-31fc8ffbc7bf.png)
+
+
+Whew—you did it! This is definitely one of the toughest chapters in the book. So is dynamic programming ever really used? Yes:
+
+* Biologists use the longest common subsequence to find similarities in DNA strands. They can use this to tell how similar two animals or two diseases are. The longest common subsequence is being used to find a cure for multiple sclerosis.
+* Have you ever used diff (like git diff)? Diff tells you the differences between two files, and it uses dynamic programming to do so.
+* We talked about string similarity. Levenshtein distance measures how similar two strings are, and it uses dynamic programming. Levenshtein distance is used for everything from spell-check to figuring out whether a user is uploading copyrighted data.
+* Have you ever used an app that does word wrap, like Microsoft Word? How does it figure out where to wrap so that the line length stays consistent? Dynamic programming!
+
+### Recap
+
+* Dynamic programming is useful when you’re trying to optimize something given a constraint.
+* You can use dynamic programming when the problem can be broken into discrete subproblems.
+* Every dynamic-programming solution involves a grid.
+* The values in the cells are usually what you’re trying to optimize.
+* Each cell is a subproblem, so think about how you can divide your problem into subproblems.
+* There’s no single formula for calculating a dynamic-programming solution.
+
+## 10 - k-nearest neighbors
+
+* You learn to build a classification system using the k-nearest neighbors algorithm.
+* You learn about feature extraction.
+* You learn about regression: predicting a number, like the value of a stock tomorrow, or how much a user will enjoy a movie.
+* You learn about the use cases and limitations of k-nearest neighbors.
+
+### Classifying oranges vs. grapefruit
+
+Look at this fruit. Is it an orange or a grapefruit? Well, I know that grapefruits are generally bigger and redder.
+
+![image](https://user-images.githubusercontent.com/25869911/151723194-80a0c608-d64a-4cdf-95a4-9a8fedf4b025.png)
 
 
 
