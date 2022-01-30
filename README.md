@@ -667,4 +667,66 @@ A greedy algorithm is simple: at each step, pick the optimal move. In this case,
 
 ### The set-covering problem
 
+![image](https://user-images.githubusercontent.com/25869911/151719206-33ca6b6e-425f-40a9-a6c5-2307c8b97879.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151719311-cdeb1fca-6561-44a2-9864-822326dc7827.png)
+
+
+List every possible subset of stations. This is called the power set. There are 2^n possible subsets.
+
+### approximation algorithms
+
+Greedy algorithms to the rescue! Here’s a greedy algorithm that comes pretty close:
+
+* 1. Pick the station that covers the most states that haven’t been covered yet. It’s OK if the station covers some states that have been covered already.
+* 2. Repeat until all the states are covered.
+
+This is called an approximation algorithm. When calculating the exact solution will take too much time, an approximation algorithm will work. Approximation algorithms are judged by
+
+* How fast they are
+* How close they are to the optimal solution
+
+Greedy algorithms are a good choice because not only are they simple to come up with, but that simplicity means they usually run fast, too. In this case, the greedy algorithm runs in O(n^2) time, where n is the number of radio stations.
+
+![image](https://user-images.githubusercontent.com/25869911/151719475-addc46eb-7b82-4ed5-b7a8-77ae1b622938.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151719609-becbb6a6-3ff5-42ef-ba8f-dbe3a31d75b1.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151719757-d243fe42-85a6-4583-b158-8f0195a797b9.png)
+
+
+### NP-complete problems
+
+To solve the set-covering problem, you had to calculate every possible set.
+
+![image](https://user-images.githubusercontent.com/25869911/151719946-5ab080b6-6d83-455f-a286-c45f044ace0f.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151720086-6c789914-8e1a-413c-896d-08e798a59740.png)
+
+
+This is called the factorial function (remember reading about this in chapter 3?). So 5! = 120. Suppose you have 10 cities. How many possible routes are there? 10! = 3,628,800. You have to calculate over 3 million possible routes for 10 cities. As you can see, the number of possible routes becomes big very fast! This is why it’s impossible to compute the “correct” solution for the traveling-salesperson problem if you have a large number of cities.
+
+The traveling-salesperson problem and the set-covering problem both have something in common: you calculate every possible solution and pick the smallest/shortest one. Both of these problems are NP-complete.
+
+![image](https://user-images.githubusercontent.com/25869911/151720189-5aabd75e-e2bc-486a-a3c5-25b05322c99d.png)
+
+### How do you tell if a problem is NP-complete?
+
+![image](https://user-images.githubusercontent.com/25869911/151720233-6dbd2a90-84d2-42b2-bc80-dab569d8fad6.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151720348-e9a5c842-5197-48c6-9aa2-feba5f1d3c3f.png)
+
+
+### Recap
+
+* Greedy algorithms optimize locally, hoping to end up with a global optimum.
+* NP-complete problems have no known fast solution.
+* If you have an NP-complete problem, your best bet is to use an approximation algorithm.
+* Greedy algorithms are easy to write and fast to run, so they make good approximation algorithms.
+
+## 9 - dynamic programming
+
+
+
+
 
