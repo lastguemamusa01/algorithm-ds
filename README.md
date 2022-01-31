@@ -808,5 +808,152 @@ Look at this fruit. Is it an orange or a grapefruit? Well, I know that grapefrui
 ![image](https://user-images.githubusercontent.com/25869911/151723512-9e9594fc-c62e-4abb-854f-0d575ff1b4c9.png)
 
 
+### Regression
+
+![image](https://user-images.githubusercontent.com/25869911/151723782-be544b03-c37b-4047-a153-fe71e757cd5d.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151723788-3c5f43c4-987d-4ad2-9249-f78acf4195a5.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151723793-dbf66fb2-fdf2-4bef-8cff-3cc757e460ff.png)
+
+### Introduction to machine learning
+
+![image](https://user-images.githubusercontent.com/25869911/151724042-51e46271-e377-440f-9ad8-747468ed7990.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151724050-64ef4bda-6ca8-4c27-849e-45debbbe3b9d.png)
+
+
+### Recap
+
+I hope this gives you an idea of all the different things you can do with KNN and with machine learning! Machine learning is an interesting field that you can go pretty deep into if you decide to:
+
+# KNN is used for classification and regression and involves looking at the k-nearest neighbors.
+# Classification = categorization into a group.
+# Regression = predicting a response (like a number).
+# Feature extraction means converting an item (like a fruit or a user) into a list of numbers that can be compared.
+# Picking good features is an important part of a successful KNN algorithm.
+
+
+## 11 - where to go next
+
+You get a brief overview of 10 algorithms that weren’t covered in this book, and why they’re useful.
+
+### Trees
+
+![image](https://user-images.githubusercontent.com/25869911/151724319-47b1aaa4-d6ce-49da-ba19-17297f0c6d1b.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151724325-701e4c0f-5dba-42b0-bf1d-d39529e1193d.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151724328-20bd9148-37a2-40ee-8abc-6343c24f8493.png)
+
+
+
+### Inverted indexes
+
+![image](https://user-images.githubusercontent.com/25869911/151724419-7fb568ef-3dc6-4c20-be09-5cd2b79705a4.png)
+
+
+### The Fourier transform
+
+The Fourier transform is one of those rare algorithms: brilliant,
+elegant, and with a million use cases. The best analogy for the Fourier transform comes from Better Explained (a great website that explains math simply): given a smoothie, the Fourier transform will tell you the ingredients in the smoothie.1 Or, to put it another way, given a song, the transform can separate it into individual frequencies.
+
+It turns out that this simple idea has a lot of use cases. For example, if you can separate a song into frequencies, you can boost the ones you care about. You could boost the bass and hide the treble. The Fourier transform is great for processing signals. You can also use it to compress music. First you break an audio file down into its ingredient notes. The Fourier transform tells you exactly how much each note contributes
+to the overall song. So you can just get rid of the notes that aren’t important. That’s how the MP3 format works!
+
+Music isn’t the only type of digital signal. The JPG format is another compressed format, and it works the same way. People use the Fourier transform to try to predict upcoming earthquakes and analyze DNA.
+
+You can use it to build an app like Shazam, which guesses what song is playing. The Fourier transform has a lot of uses. Chances are high that you’ll run into it!
+
+### Parallel algorithms
+
+The next three topics are about scalability and working with a lot of data. Back in the day, computers kept getting faster and faster. If you wanted to make your algorithm faster, you could wait a few months, and the computers themselves would become faster. But we’re near the end of that period. Instead, laptops and computers ship with multiple cores. To make your algorithms faster, you need to change them to run in parallel across all the cores at once!
+
+Here’s a simple example. The best you can do with a sorting algorithm is roughly O(n log n). It’s well known that you can’t sort an array in O(n) time—unless you use a parallel algorithm! There’s a parallel version of quicksort that will sort an array in O(n) time.
+
+Parallel algorithms are hard to design. And it’s also hard to make sure they work correctly and to figure out what type of speed boost you’ll see. One thing is for sure—the time gains aren’t linear. So if you have two cores in your laptop instead of one, that almost never means your algorithm will magically run twice as fast. There are a couple of reasons for this:
+
+* Overhead of managing the parallelism—Suppose you have to sort an array of 1,000 items. How do you divide this task among the two cores? Do you give each core 500 items to sort and then merge the two sorted arrays into one big sorted array? Merging the two arrays takes time.
+* Load balancing—Suppose you have 10 tasks to do, so you give each core 5 tasks. But core A gets all the easy tasks, so it’s done in 10 seconds, whereas core B gets all the hard tasks, so it takes a minute. That means core A was sitting idle for 50 seconds while core B was doing all the work! How do you distribute the work evenly so both cores are working equally hard?
+
+If you’re interested in the theoretical side of performance and scalability, parallel algorithms might be for you!
+
+### MapReduce
+
+There’s a special type of parallel algorithm that is becoming increasingly popular: the distributed algorithm. It’s fine to run a parallel algorithm on your laptop if you need two to four cores, but what if you need hundreds of cores? Then you can write your algorithm to run across multiple machines. The MapReduce algorithm is a popular distributed algorithm. You can use it through the popular open source tool
+Apache Hadoop.
+
+### Why are distributed algorithms useful?
+
+Suppose you have a table with billions or trillions of rows, and you want to run a complicated SQL query on it. You can’t run it on MySQL, because it struggles after a few billion rows. Use MapReduce through Hadoop!
+
+Or suppose you have to process a long list of jobs. Each job takes 10 seconds to process, and you need to process 1 million jobs like this. If you do this on one machine, it will take you months! If you could run it across 100 machines, you might be done in a few days.
+
+Distributed algorithms are great when you have a lot of work to do and want to speed up the time required to do it. MapReduce in particular is built up from two simple ideas: the map function and the reduce function.
+
+### the map function
+
+![image](https://user-images.githubusercontent.com/25869911/151724668-f7e1c279-486d-4779-a4bb-e7b9a2c6dbf8.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151724671-9db8ffea-d52f-4488-90c0-4079247be591.png)
+
+
+In this case, you sum up all the elements in the array: 1 + 2 + 3 + 4 + 5 = 15! I won’t explain reduce in more detail here, because there are plenty of tutorials online.
+
+MapReduce uses these two simple concepts to run queries about data across multiple machines. When you have a large dataset (billions
+of rows), MapReduce can give you an answer in minutes where a traditional database might take hours.
+
+
+### Bloom filters and HyperLogLog
+
+![image](https://user-images.githubusercontent.com/25869911/151725239-ec61c315-6c52-4fd9-b5f7-2dba7547f69c.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151725256-e4c72629-c364-478e-9c1e-8ab0b4b28af7.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151725265-fc40cd46-e01d-4b0c-8804-c833d5013938.png)
+
+### The SHA algorithms
+
+![image](https://user-images.githubusercontent.com/25869911/151725386-1397bcca-b285-4d16-9d2b-16522981987c.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151725391-e2449c7a-da81-408d-9789-89410baca76d.png)
+
+![image](https://user-images.githubusercontent.com/25869911/151725395-9e887929-f737-48d1-8ce9-73866678184a.png)
+
+
+* Scribd allows users to upload documents or books to share with others. But Scribd doesn’t want users uploading copyrighted content! The site could use Simhash to check whether an upload is similar to a Harry Potter book and, if so, reject it automatically.
+Simhash is useful when you want to check for similar items.
+
+
+### Diffie-Hellman key exchange
+
+![image](https://user-images.githubusercontent.com/25869911/151725472-afff53f2-25a7-480c-8c10-c13a1363c46d.png)
+
+
+That worked! A simple cipher like this is easy to break. The Germans used a much more complicated cipher in WWII, but it was still cracked. Diffie-Hellman solves both problems:
+
+* Both parties don’t need to know the cipher. So we don’t have to meet and agree to what the cipher should be.
+* The encrypted messages are extremely hard to decode.
+
+Diffie-Hellman has two keys: a public key and a private key. The public key is exactly that: public. You can post it on your website, email it
+to friends, or do anything you want with it. You don’t have to hide it. When someone wants to send you a message, they encrypt it using
+the public key. An encrypted message can only be decrypted using the private key. As long as you’re the only person with the private key, only you will be able to decrypt this message!
+
+The Diffie-Hellman algorithm is still used in practice, along with its successor, RSA. If you’re interested in cryptography, Diffie-Hellman is a good place to start: it’s elegant and not too hard to follow.
+
+### Linear programming
+
+I saved the best for last. Linear programming is one of the coolest things I know.
+
+Linear programming is used to maximize something given some constraints. For example, suppose your company makes two products, shirts and totes. Shirts need 1 meter of fabric and 5 buttons. Totes need 2 meters of fabric and 2 buttons. You have 11 meters of fabric and 20 buttons. You make $2 per shirt and $3 per tote. How many shirts and totes should you make to maximize your profit?
+
+Here you’re trying to maximize profit, and you’re constrained by the amount of materials you have.
+Another example: you’re a politician, and you want to maximize the number of votes you get. Your research has shown that it takes an average of an hour of work (marketing, research, and so on) for each vote from a San Franciscan or 1.5 hours/vote from a Chicagoan. You need at least 500 San Franciscans and at least 300 Chicagoans. You have 50 days. It also costs you $2/San Franciscan versus $1/Chicagoan. Your total budget is $1,500. What’s the maximum number of total votes you can get (San Francisco + Chicago)?
+
+Here you’re trying to maximize votes, and you’re constrained by time and money.
+
+You might be thinking, “You’ve talked about a lot of optimization topics in this book. How are they related to linear programming?” All the graph algorithms can be done through linear programming instead. Linear programming is a much more general framework, and graph problems are a subset of that. I hope your mind is blown!
+
+Linear programming uses the Simplex algorithm. It’s a complex algorithm, which is why I didn’t include it in this book. If you’re interested in optimization, look up linear programming!
 
 
